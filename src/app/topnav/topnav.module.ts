@@ -4,13 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 
 //Components
-import { TopnavComponent } from '../topnav/topnav.component';
+import { TopnavComponent } from './topnav.component';
 
 
 
 @NgModule({
   declarations: [
-    TopnavComponent
   ],
   imports: [
     BrowserModule,
