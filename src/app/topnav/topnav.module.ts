@@ -10,12 +10,14 @@ import { TopnavComponent } from './topnav.component';
 
 @NgModule({
   declarations: [
+    TopnavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   exports: [
+    TopnavComponent,
   ],
 })
 export class TopnavModule { }

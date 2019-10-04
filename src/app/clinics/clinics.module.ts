@@ -5,26 +5,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-//Modules
-import { TopnavModule } from '../topnav/topnav.module'
-
 //Components
-import { HomeComponent } from './home.component';
-import { CarouselComponent } from '../carousel/carousel.component'
+import { ClinicsComponent } from './clinics.component';
 
 
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    CarouselComponent
+    ClinicsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    TopnavModule
+    CommonModule
   ]
 })
-export class HomeModule { }
+export class ClinicsModule { }

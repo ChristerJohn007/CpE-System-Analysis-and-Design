@@ -15,3 +15,8 @@
 .wmax {
     max-width: 1500px;
 }
+
+li a.active {
+    font-weight: bolder;
+    border-top: 3px solid greenyellow;
+}

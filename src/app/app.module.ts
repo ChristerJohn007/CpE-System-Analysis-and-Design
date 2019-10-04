@@ -7,11 +7,16 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopnavModule } from './topnav/topnav.module'; 
 import { HomeModule } from './home/home.module';
+import { ServicesmainModule } from './servicesmain/servicesmain.module'
 
 
 
 //Components
 import { AppComponent } from './app.component';
+import { ClinicsComponent } from './clinics/clinics.component';
+import { AboutComponent } from './about/about.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+
 
 
 
@@ -19,6 +24,9 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
+    ClinicsComponent,
+    AboutComponent,
+    AppointmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,8 @@ import { AppComponent } from './app.component';
     MDBBootstrapModule.forRoot(),
     NgbModule,
     TopnavModule,
-    HomeModule
+    HomeModule,
+    ServicesmainModule
   ],
   providers: [],
   bootstrap: [AppComponent]
