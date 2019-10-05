@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'services/GeneralDentistry', component: Service1Component},
   { path: 'services/CosmeticDentistry', component: Service2Component},
   { path: 'services/Prosthodontics', component: Service3Component},
-  { path: 'services/Orthodontics', component: Service4Component},
+  { path: 'services/OrthoDontics', component: Service4Component},
   { path: 'services/Xray', component: Service5Component},
   { path: 'clinics', component: ClinicsComponent},
   { path: 'about', component: AboutComponent},
