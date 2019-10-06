@@ -12,6 +12,10 @@ import { TopnavModule } from '../topnav/topnav.module'
 import { HomeComponent } from './home.component';
 import { CarouselComponent } from '../carousel/carousel.component'
 
+//Angular Material Modules
+import { MatDividerModule } from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 
 
 
@@ -24,7 +28,9 @@ import { CarouselComponent } from '../carousel/carousel.component'
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    TopnavModule
+    TopnavModule,
+    MatDividerModule,
+    MatListModule
   ]
 })
 export class HomeModule { }

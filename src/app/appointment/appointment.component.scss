@@ -2,3 +2,17 @@
     max-width: 1500px;
       margin: 0 auto;
 }
+
+
+.bg {
+  background-color: rgba($color: #282929, $alpha: 0.7)
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}

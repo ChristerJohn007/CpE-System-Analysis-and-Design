@@ -7,7 +7,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopnavModule } from './topnav/topnav.module'; 
 import { HomeModule } from './home/home.module';
-import { ServicesmainModule } from './servicesmain/servicesmain.module'
+import { ServicesmainModule } from './servicesmain/servicesmain.module';
+import { AppointmentModule } from './appointment/appointment.module';
 
 
 
@@ -15,7 +16,7 @@ import { ServicesmainModule } from './servicesmain/servicesmain.module'
 import { AppComponent } from './app.component';
 import { ClinicsComponent } from './clinics/clinics.component';
 import { AboutComponent } from './about/about.component';
-import { AppointmentComponent } from './appointment/appointment.component';
+
 
 
 //Material Angular
@@ -31,7 +32,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     ClinicsComponent,
     AboutComponent,
-    AppointmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TopnavModule,
     HomeModule,
     ServicesmainModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppointmentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
