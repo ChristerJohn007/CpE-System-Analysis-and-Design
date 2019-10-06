@@ -18,6 +18,11 @@ import { AboutComponent } from './about/about.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 
 
+//Material Angular
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 
 
@@ -36,7 +41,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     NgbModule,
     TopnavModule,
     HomeModule,
-    ServicesmainModule
+    ServicesmainModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

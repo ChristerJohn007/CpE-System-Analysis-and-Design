@@ -5,6 +5,7 @@ import { AppRoutingModule } from '../app-routing.module';
 
 //Components
 import { TopnavComponent } from './topnav.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -14,7 +15,8 @@ import { TopnavComponent } from './topnav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatToolbarModule
   ],
   exports: [
     TopnavComponent,
