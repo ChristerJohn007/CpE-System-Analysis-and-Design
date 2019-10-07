@@ -1,20 +1,21 @@
 <div class="container-fluid car">
 <br>
-
+<!-- <form [formGroup]="subForm" autocomplete="on" novalidate (ngSubmit)="submitForm(subForm.value)"> -->
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>Set an Appointment</mat-card-title>
-            <mat-card-subtitle>Fill up the fields with patient information and contact numbers</mat-card-subtitle>
+            <mat-card-subtitle>Fill up the fields with patient information and contact number. For more information, send us a PM in our <a href="https://www.facebook.com/mateoDCofficial/">Facebook page</a></mat-card-subtitle>
     </mat-card-header>
             <mat-card-content>
                 <div class="example-container">
                     <mat-form-field>
-                        <input matInput placeholder="Name">
+                        <input matInput placeholder="Name" type="text" required>
+
                     </mat-form-field>
 
                     <mat-form-field>
-                            <input matInput placeholder="Email" [formControl]="emailFormControl">
+                            <input matInput placeholder="Email" [formControl]="emailFormControl" type="email">
                                 <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                                 Please enter a valid email address
                                 </mat-error>
@@ -23,21 +24,93 @@
                                 </mat-error>
                     </mat-form-field>
 
-                    
-                    
-                    
                     <mat-form-field>
-                    <mat-select placeholder="Select">
-                    <mat-option value="option">Option</mat-option>
-                    </mat-select>
+                        <input matInput placeholder="Cellphone Number" type="tel" pattern="[0-9]+" maxlength="11">
                     </mat-form-field>
+
+                    <br>
+                    <h3 class="appdet">Appointment Details:</h3>
+
+                    
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3">
+                        <mat-form-field>
+                            <mat-select placeholder="Month">
+                                <mat-option value="Jan">January</mat-option>
+                                <mat-option value="Feb">February</mat-option>
+                                <mat-option value="Mar">March</mat-option>
+                                <mat-option value="Apr">April</mat-option>
+                                <mat-option value="May">May</mat-option>
+                                <mat-option value="Jun">June</mat-option>
+                                <mat-option value="Jul">July</mat-option>
+                                <mat-option value="Aug">August</mat-option>
+                                <mat-option value="Sep">September</mat-option>
+                                <mat-option value="Oct">October</mat-option>
+                                <mat-option value="Nov">November</mat-option>
+                                <mat-option value="Dec">December</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        </div>
+
+                        <div class="col-xl-3">
+                        <mat-form-field>
+                                <input matInput placeholder="Day" type="text" pattern="[0-9]+" maxlength="2">
+                        </mat-form-field>
+                        </div>
+
+                        <div class="col-xl-3">
+                        <mat-form-field>
+                                <input matInput placeholder="Year" type="text" pattern="[0-9]+" maxlength="4">
+                        </mat-form-field>
+                        </div>
+
+                        <div class="col-xl-3">
+                        <mat-form-field>
+                            <mat-select placeholder="Time">
+                                <mat-option value="08:00">08:00 AM</mat-option>
+                                <mat-option value="09:00">09:00 AM</mat-option>
+                                <mat-option value="10:00">10:00 AM</mat-option>
+                                <mat-option value="11:00">11:00 AM</mat-option>
+                                <mat-option value="12:00">12:00 PM</mat-option>
+                                <mat-option value="13:00">01:00 PM</mat-option>
+                                <mat-option value="14:00">02:00 PM</mat-option>
+                                <mat-option value="15:00">03:00 PM</mat-option>
+                                <mat-option value="16:00">04:00 PM</mat-option>
+                                <mat-option value="17:00">05:00 PM</mat-option>
+                                <mat-option value="18:00">06:00 PM</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        </div>
+
+                        
+                    
+                    
+                    </div>
+                    </div>
+
+                    <mat-form-field>
+                            <mat-select placeholder="Procedure">
+                                <mat-option value="Genden">General Dentistry</mat-option>
+                                <mat-option value="Cosden">Cosmetic Dentistry</mat-option>
+                                <mat-option value="Pros">Prosthodontics</mat-option>
+                                <mat-option value="Ortho">Orthodontics</mat-option>
+                                <mat-option value="Xray">XRAY</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+
+                    <p>*This establishment complies with the Data Privacy Act of 2012 thus pressing the submit button means that you give your full consent and understanding of the Data Privacy Notice</p>
+
+
+
+
                 </div>
             </mat-card-content>
                     <mat-card-actions>
                         <button mat-button>Submit</button>
                     </mat-card-actions>
 </mat-card>
-
+<!-- </form> -->
 
       
 

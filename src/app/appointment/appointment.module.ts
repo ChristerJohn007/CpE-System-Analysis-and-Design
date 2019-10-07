@@ -32,7 +32,12 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule
   ],
   exports: [
-
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AppointmentModule { }
