@@ -10,6 +10,8 @@ import { HomeModule } from './home/home.module';
 import { ServicesmainModule } from './servicesmain/servicesmain.module';
 import { AppointmentModule } from './appointment/appointment.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 
@@ -26,6 +28,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Services
 import { AppointmentService } from './shared/appointment.service';
 
+//Environment
+import { environment } from '../environments/environment';
+// import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+
 
 
 
@@ -35,7 +41,8 @@ import { AppointmentService } from './shared/appointment.service';
   declarations: [
     AppComponent,
     ClinicsComponent,
-    AboutComponent,
+    AboutComponent
+    // AppointmentListComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,9 +55,11 @@ import { AppointmentService } from './shared/appointment.service';
     ServicesmainModule,
     BrowserAnimationsModule,
     AppointmentModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AppointmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

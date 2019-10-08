@@ -15,26 +15,26 @@
                 <div class="example-container">
                     <mat-form-field>
                         <input matInput placeholder="Name" type="text" required formControlName="fullName" [ngClass]="{'is-invalid':submitted && formControls.fullName.errors}">
-                                <mat-error *ngIf="formControls.fullName.errors.required">
+                                <!-- <mat-error *ngIf="formControls.fullName.errors.required">
                                     Patient's full name is required
-                                </mat-error>
+                                </mat-error> -->
                     </mat-form-field>
 
                     <mat-form-field>
                             <input matInput placeholder="Email" formControlName="email" type="email" [ngClass]="{'is-invalid':submitted && formControls.email.errors}" required>
-                                <mat-error *ngIf="formControls.email.errors.required">
+                                <!-- <mat-error *ngIf="formControls.email.errors.required">
                                     Email is required
-                                </mat-error>
+                                </mat-error> -->
                     </mat-form-field>
 
                     <mat-form-field>
                         <input matInput placeholder="Cellphone Number" type="tel" pattern="[0-9]+" maxlength="11" formControlName="mobile" [ngClass]="{'is-invalid':submitted && formControls.mobile.errors}">
-                                <mat-error *ngIf="formControls.mobile.errors.required">
+                                <!-- <mat-error *ngIf="formControls.mobile.errors.required">
                                     Please enter a mobile number for contact
                                 </mat-error>
                                 <mat-error *ngIf="formControls.mobile.errors.minlength">
                                     Please enter a valid 11 digit PH mobile number
-                                </mat-error>
+                                </mat-error> -->
                     </mat-form-field>
 
                     <br>
@@ -68,21 +68,21 @@
                         <div class="col-xl-3">
                         <mat-form-field>
                                 <input matInput placeholder="Day" type="text" pattern="[0-9]+" maxlength="2" formControlName="day">
-                                <mat-error *ngIf="formControls.day.errors.required">
+                                <!-- <mat-error *ngIf="formControls.day.errors.required">
                                     Please enter a day
                                 </mat-error>
                                 <mat-error *ngIf="formControls.day.errors.minlength || formControls.day.errors.maxlength || formControls.day.errors.min || formControls.day.errors.max">
                                     Please enter a valid day of the month
-                                </mat-error>
+                                </mat-error> -->
                         </mat-form-field>
                         </div>
 
                         <div class="col-xl-3">
                         <mat-form-field>
                                 <input matInput placeholder="Year" type="text" pattern="[0-9]+" maxlength="4" formControlName="year">
-                                <mat-error *ngIf="formControls.year.errors.minlength || formControls.year.errors.maxlength || formControls.year.errors.min || formControls.year.errors.max">
+                                <!-- <mat-error *ngIf="formControls.year.errors.minlength || formControls.year.errors.maxlength || formControls.year.errors.min || formControls.year.errors.max">
                                     Please enter a valid year
-                                </mat-error>
+                                </mat-error> -->
                         </mat-form-field>
                         </div>
 
@@ -127,6 +127,9 @@
                     </mat-form-field>
 
                     <p>*This establishment complies with the <a href="https://www.privacy.gov.ph/data-privacy-act/">Data Privacy Act of 2012</a> thus pressing the submit button means that you give your full consent and understanding of the Data Privacy Notice</p>
+                    <div class="alert alert-info" *ngIf="showSuccessMessage">
+                        Appointment submitted successfully!
+                    </div>
 
 
 
@@ -140,6 +143,7 @@
 
 
 </form>
+
 
       
 

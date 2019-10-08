@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppointmentService {
 
-  constructor() { }
+  constructor(private firebase: AngularFireDatabase) { }
+  appointmentList: AngularFireList<any>;
 
   form = new FormGroup({
       $key: new FormControl(null),
@@ -20,5 +22,22 @@ export class AppointmentService {
       procedure: new FormControl('', Validators.required),
   });
 
-  
+  getAppointments() {
+    this.appointmentList = this.firebase.list('appointments');
+    return this.appointmentList.snapshotChanges();
+  }
+
+  insertAppointment(appointment) {
+    this.appointmentList.push({
+      fullName: appointment.fullName,
+      email: appointment.email,
+      mobile: appointment.mobile,
+      month: appointment.month,
+      day: appointment.day,
+      year: appointment.year,
+      time: appointment.time,
+      procedure: appointment.procedure
+    });
+  }
+
 }

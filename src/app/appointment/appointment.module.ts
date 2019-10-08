@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //Components
 import { AppointmentComponent } from './appointment.component';
+// import { AppointmentListComponent } from '../appointment-list/appointment-list.component';
 
 //Material Angular
 import { MatInputModule } from '@angular/material/input';
@@ -18,7 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
-    AppointmentComponent
+    AppointmentComponent,
+    // AppointmentListComponent
   ],
   imports: [
     CommonModule,
