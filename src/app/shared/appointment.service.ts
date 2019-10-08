@@ -9,11 +9,12 @@ export class AppointmentService {
 
   constructor(private firebase: AngularFireDatabase) { }
   appointmentList: AngularFireList<any>;
+  emailRegEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
   form = new FormGroup({
       $key: new FormControl(null),
       fullName: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.email),
+      email: new FormControl('', [Validators.email,Validators.pattern(this.emailRegEx)]),
       mobile: new FormControl('', [Validators.required, Validators.minLength(11)]),
       month: new FormControl('', Validators.required),
       day: new FormControl('', [Validators.required, Validators.minLength(1),Validators.maxLength(2),Validators.min(1),Validators.max(31)]),
@@ -39,4 +40,6 @@ export class AppointmentService {
       procedure: appointment.procedure
     });
   }
+
+  
 }
