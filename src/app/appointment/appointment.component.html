@@ -18,13 +18,22 @@
                                 <!-- <mat-error *ngIf="formControls.fullName.errors.required">
                                     Patient's full name is required
                                 </mat-error> -->
+                                <mat-error *ngIf="fullNameFormControl.hasError('required')">
+                                    Patient's full name is <strong>required</strong>
+                                </mat-error>
                     </mat-form-field>
 
                     <mat-form-field>
-                            <input matInput placeholder="Email" formControlName="email" type="email" [ngClass]="{'is-invalid':submitted && formControls.email.errors}" required>
-                                <!-- <mat-error *ngIf="formControls.email.errors.required">
+                            <input matInput placeholder="Email" formControlName="email" type="email" [ngClass]="{'is-invalid':submitted && formControls.email.errors}" required [errorStateMatcher]="matcher">
+                                <!-- <mat-error *ngIf="fullNameformControl.required">
                                     Email is required
                                 </mat-error> -->
+                                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                    Please enter a valid email address
+                                </mat-error>
+                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                    Email is <strong>required</strong>
+                                </mat-error>
                     </mat-form-field>
 
                     <mat-form-field>
@@ -35,6 +44,9 @@
                                 <mat-error *ngIf="formControls.mobile.errors.minlength">
                                     Please enter a valid 11 digit PH mobile number
                                 </mat-error> -->
+                                <mat-error *ngIf="mobileFormControl.hasError('required')">
+                                    Please enter a valid 11 digit PH mobile number
+                                </mat-error>
                     </mat-form-field>
 
                     <br>
@@ -62,6 +74,9 @@
                             <!-- <mat-error *ngIf="formControls.month.errors.required">
                                 Please select a month
                             </mat-error> -->
+                            <mat-error *ngIf="monthFormControl.hasError('required')">
+                                Please select a month
+                            </mat-error>
                         </mat-form-field>
                         </div>
 
@@ -104,6 +119,9 @@
                             <!-- <mat-error *ngIf="formControls.time.errors.required">
                                 Please select a time
                             </mat-error> -->
+                            <mat-error *ngIf="timeFormControl.hasError('required')">
+                                Please select a valid appointment time (Operating Hours: 8:00AM to 6:00PM)
+                            </mat-error>
                         </mat-form-field>
                         </div>
 
@@ -124,6 +142,9 @@
                             <!-- <mat-error *ngIf="formControls.procedure.errors.required">
                                 Please select a procedure (Note: 1 procedure per appointment only)
                             </mat-error> -->
+                            <mat-error *ngIf="procedureFormControl.hasError('required')">
+                                Please select a procedure
+                            </mat-error>
                     </mat-form-field>
 
                     <p>*This establishment complies with the <a href="https://www.privacy.gov.ph/data-privacy-act/">Data Privacy Act of 2012</a> thus pressing the submit button means that you give your full consent and understanding of the Data Privacy Notice</p>

@@ -39,5 +39,4 @@ export class AppointmentService {
       procedure: appointment.procedure
     });
   }
-
 }

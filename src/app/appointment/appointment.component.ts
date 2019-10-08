@@ -12,13 +12,27 @@ import { AppointmentService } from '../shared/appointment.service';
   styleUrls: ['./appointment.component.scss']
 })
 export class AppointmentComponent implements OnInit {
-//     emailFormControl = new FormControl('', [
-//     Validators.required,
-//     Validators.email,
-// ]);
-//     fullNameFormControl = new FormControl('', [
-//     Validators.required,
-// ]);
+    emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+]);
+    fullNameFormControl = new FormControl('', [
+    Validators.required,
+]);
+    mobileFormControl = new FormControl('', [
+    Validators.required,
+]);
+    monthFormControl = new FormControl('', [
+    Validators.required,
+]);
+  timeFormControl = new FormControl('', [
+  Validators.required,
+]);
+  procedureFormControl = new FormControl('', [
+  Validators.required,
+]);
+    
+
 
 
 
@@ -46,4 +60,5 @@ export class AppointmentComponent implements OnInit {
     }
   }
 
+ 
 }
