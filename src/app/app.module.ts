@@ -9,6 +9,7 @@ import { TopnavModule } from './topnav/topnav.module';
 import { HomeModule } from './home/home.module';
 import { ServicesmainModule } from './servicesmain/servicesmain.module';
 import { AppointmentModule } from './appointment/appointment.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,6 +22,9 @@ import { AboutComponent } from './about/about.component';
 
 //Material Angular
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Services
+import { AppointmentService } from './shared/appointment.service';
 
 
 
@@ -43,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeModule,
     ServicesmainModule,
     BrowserAnimationsModule,
-    AppointmentModule
+    AppointmentModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,10 @@
 <div class="container-fluid car">
 <br>
-<!-- <form [formGroup]="subForm" autocomplete="on" novalidate (ngSubmit)="submitForm(subForm.value)"> -->
+
+<form [formGroup]="this.appointmentService.form" (ngSubmit)="onSubmit()">
+    <input type="hidden" formControlName="$key">
+
+
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
@@ -10,22 +14,27 @@
             <mat-card-content>
                 <div class="example-container">
                     <mat-form-field>
-                        <input matInput placeholder="Name" type="text" required>
-
-                    </mat-form-field>
-
-                    <mat-form-field>
-                            <input matInput placeholder="Email" [formControl]="emailFormControl" type="email">
-                                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                                Please enter a valid email address
-                                </mat-error>
-                                <mat-error *ngIf="emailFormControl.hasError('required')">
-                                Email is <strong>required</strong>
+                        <input matInput placeholder="Name" type="text" required formControlName="fullName" [ngClass]="{'is-invalid':submitted && formControls.fullName.errors}">
+                                <mat-error *ngIf="formControls.fullName.errors.required">
+                                    Patient's full name is required
                                 </mat-error>
                     </mat-form-field>
 
                     <mat-form-field>
-                        <input matInput placeholder="Cellphone Number" type="tel" pattern="[0-9]+" maxlength="11">
+                            <input matInput placeholder="Email" formControlName="email" type="email" [ngClass]="{'is-invalid':submitted && formControls.email.errors}" required>
+                                <mat-error *ngIf="formControls.email.errors.required">
+                                    Email is required
+                                </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Cellphone Number" type="tel" pattern="[0-9]+" maxlength="11" formControlName="mobile" [ngClass]="{'is-invalid':submitted && formControls.mobile.errors}">
+                                <mat-error *ngIf="formControls.mobile.errors.required">
+                                    Please enter a mobile number for contact
+                                </mat-error>
+                                <mat-error *ngIf="formControls.mobile.errors.minlength">
+                                    Please enter a valid 11 digit PH mobile number
+                                </mat-error>
                     </mat-form-field>
 
                     <br>
@@ -36,7 +45,7 @@
                     <div class="row">
                         <div class="col-xl-3">
                         <mat-form-field>
-                            <mat-select placeholder="Month">
+                            <mat-select placeholder="Month" formControlName="month" [ngClass]="{'is-invalid':submitted && formControls.month.errors}">
                                 <mat-option value="Jan">January</mat-option>
                                 <mat-option value="Feb">February</mat-option>
                                 <mat-option value="Mar">March</mat-option>
@@ -50,24 +59,36 @@
                                 <mat-option value="Nov">November</mat-option>
                                 <mat-option value="Dec">December</mat-option>
                             </mat-select>
+                            <!-- <mat-error *ngIf="formControls.month.errors.required">
+                                Please select a month
+                            </mat-error> -->
                         </mat-form-field>
                         </div>
 
                         <div class="col-xl-3">
                         <mat-form-field>
-                                <input matInput placeholder="Day" type="text" pattern="[0-9]+" maxlength="2">
+                                <input matInput placeholder="Day" type="text" pattern="[0-9]+" maxlength="2" formControlName="day">
+                                <mat-error *ngIf="formControls.day.errors.required">
+                                    Please enter a day
+                                </mat-error>
+                                <mat-error *ngIf="formControls.day.errors.minlength || formControls.day.errors.maxlength || formControls.day.errors.min || formControls.day.errors.max">
+                                    Please enter a valid day of the month
+                                </mat-error>
                         </mat-form-field>
                         </div>
 
                         <div class="col-xl-3">
                         <mat-form-field>
-                                <input matInput placeholder="Year" type="text" pattern="[0-9]+" maxlength="4">
+                                <input matInput placeholder="Year" type="text" pattern="[0-9]+" maxlength="4" formControlName="year">
+                                <mat-error *ngIf="formControls.year.errors.minlength || formControls.year.errors.maxlength || formControls.year.errors.min || formControls.year.errors.max">
+                                    Please enter a valid year
+                                </mat-error>
                         </mat-form-field>
                         </div>
 
                         <div class="col-xl-3">
                         <mat-form-field>
-                            <mat-select placeholder="Time">
+                            <mat-select placeholder="Time" formControlName="time">
                                 <mat-option value="08:00">08:00 AM</mat-option>
                                 <mat-option value="09:00">09:00 AM</mat-option>
                                 <mat-option value="10:00">10:00 AM</mat-option>
@@ -80,6 +101,9 @@
                                 <mat-option value="17:00">05:00 PM</mat-option>
                                 <mat-option value="18:00">06:00 PM</mat-option>
                             </mat-select>
+                            <!-- <mat-error *ngIf="formControls.time.errors.required">
+                                Please select a time
+                            </mat-error> -->
                         </mat-form-field>
                         </div>
 
@@ -90,16 +114,19 @@
                     </div>
 
                     <mat-form-field>
-                            <mat-select placeholder="Procedure">
+                            <mat-select placeholder="Procedure" formControlName="procedure">
                                 <mat-option value="Genden">General Dentistry</mat-option>
                                 <mat-option value="Cosden">Cosmetic Dentistry</mat-option>
                                 <mat-option value="Pros">Prosthodontics</mat-option>
                                 <mat-option value="Ortho">Orthodontics</mat-option>
                                 <mat-option value="Xray">XRAY</mat-option>
                             </mat-select>
+                            <!-- <mat-error *ngIf="formControls.procedure.errors.required">
+                                Please select a procedure (Note: 1 procedure per appointment only)
+                            </mat-error> -->
                     </mat-form-field>
 
-                    <p>*This establishment complies with the Data Privacy Act of 2012 thus pressing the submit button means that you give your full consent and understanding of the Data Privacy Notice</p>
+                    <p>*This establishment complies with the <a href="https://www.privacy.gov.ph/data-privacy-act/">Data Privacy Act of 2012</a> thus pressing the submit button means that you give your full consent and understanding of the Data Privacy Notice</p>
 
 
 
@@ -107,10 +134,12 @@
                 </div>
             </mat-card-content>
                     <mat-card-actions>
-                        <button mat-button>Submit</button>
+                        <button mat-button class="btn btn-primary" value="Submit">Submit</button>
                     </mat-card-actions>
 </mat-card>
-<!-- </form> -->
+
+
+</form>
 
       
 
