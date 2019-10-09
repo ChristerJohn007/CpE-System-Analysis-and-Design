@@ -1,7 +1,7 @@
 <ngb-carousel>
 	<ng-template ngbSlide>
 	  <div class="picsum-img-wrapper">
-		<img src="../../assets/images/slide3.jpg" alt="Random first slide" class="img-fluid">
+		<img src="../../assets/images/slide1.png" alt="Random first slide" class="img-fluid">
 	  </div>
 	  <div class="carousel-caption">
 		<h3>General Dentistry</h3>
@@ -10,7 +10,7 @@
 	</ng-template>
 	<ng-template ngbSlide>
 	  <div class="picsum-img-wrapper">
-		<img src="../../assets/images/slide1.png" alt="Random second slide" class="img-fluid">
+		<img src="../../assets/images/slide2.png" alt="Random second slide" class="img-fluid">
 	  </div>
 	  <div class="carousel-caption">
 		<h3>Second slide label</h3>
@@ -19,7 +19,7 @@
 	</ng-template>
 	<ng-template ngbSlide>
 		<div class="picsum-img-wrapper">
-			<img src="../../assets/images/prosto.png" alt="Random third slide" class="img-fluid">
+			<img src="../../assets/images/slide3.jpg" alt="Random third slide" class="img-fluid">
 	  	</div>
 	  	<div class="carousel-caption">
 			<h3>Third slide label</h3>
@@ -28,7 +28,7 @@
 	</ng-template>
 	<ng-template ngbSlide>
 		<div class="picsum-img-wrapper">
-			<img src="../../assets/images/slide4.jpg" alt="Random fourth slide" class="img-fluid">
+			<img src="../../assets/images/slide4.png" alt="Random fourth slide" class="img-fluid">
 		</div>
 		<div class="carousel-caption">
 			<h3>Fourth slide label</h3>
@@ -37,7 +37,7 @@
 	</ng-template>
 	<ng-template ngbSlide>
 			<div class="picsum-img-wrapper">
-				<img src="../../assets/images/slide5.jpg" alt="Random fifth slide" class="img-fluid">
+				<img src="../../assets/images/slide5.png" alt="Random fifth slide" class="img-fluid">
 			</div>
 			<div class="carousel-caption">
 				<h3>Fifth slide label</h3>

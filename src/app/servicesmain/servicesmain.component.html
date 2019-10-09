@@ -1,20 +1,48 @@
-<p>Services List Page</p>
-<div>
-<router-outlet></router-outlet>
-<a routerLink='/services/GeneralDentistry'>General Dentistry</a><br>
-<a routerLink='/services/CosmeticDentistry'>Cosmetic Dentistry</a><br>
-<a routerLink='/services/Prosthodontics'>Prosthodontics</a><br>
-<a routerLink='/services/OrthoDontics'>OrthoDontics</a><br>
-<a routerLink='/services/Xray'>XRAY</a><br>
-<h1>NOTE: May bootstrap na nakalagay dito built-in, wag ka na gumawa ng CSS file, automatic na kaagad basta maglagay ka lang ng code ng html sa service components.html</h1>
+<header>
+<div class="service-intro">
+    <div class="col-md-12 col-sm-12 text-center">
+        <h1 class="intro">OUR SERVICES</h1>
+    </div>
 </div>
+</header>
 
 
-
-
-
-
-
+<main>
+<div class="row">
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="img-service">
+            <img src="../..//assets/images/service1.jpg" alt="service_1" class="img-fluid">
+           <a href="/services/GeneralDentistry"> <h3 class="genden">General Dentistry</h3></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="img-service">
+            <img src="../..//assets/images/service2.jpg" alt="service_2" class="img-fluid">
+            <a href="/services/CosmeticDentistry"> <h3 class="genden">Cosmetic Dentistry</h3></a>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="img-service">
+            <img src="../..//assets/images/service3.jpg" alt="service_3" class="img-fluid">
+            <a href="/services/OrthoDontics"> <h3 class="genden">OrthoDontics Dentistry</h3></a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12 text-center">
+        <div class="img-service">
+            <img src="../..//assets/images/service4.jpg" alt="service_4" class="img-fluid">
+            <a href="/services/Prosthodontics"> <h3 class="genden">Prosthodontics Dentistry</h3></a>
+        </div>
+    </div>
+    <div class="col-md-6 col-12-sm text-center">
+        <div class="img-service">
+            <img src="../..//assets/images/service5.jpg" alt="service_5" class="img-fluid">
+            <a href="/services/XRAY"> <h3 class="genden">Dental X-RAY</h3></a>
+        </div>
+    </div>
+</div>
+</main>
 
 
 <footer>
@@ -26,7 +54,7 @@
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, in!
                 </p>
                 <p class="pt-4 textmuted">
-                    Copyright©2019 All rights reserved | Presented by
+                    Copyright?2019 All rights reserved | Presented by
                     <span>Mateo Dental Clinic</span>
                 </p>
             </div>
