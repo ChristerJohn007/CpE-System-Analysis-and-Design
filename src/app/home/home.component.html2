@@ -1,0 +1,14 @@
+<br>
+<div class="container-fluid car">
+    <app-carousel></app-carousel>
+</div>
+<br>
+<br>
+<div class="container-fluid carb car">
+</div>
+
+
+
+<div class="container-fluid car">
+<p>Wews?</p>
+</div>

@@ -1,0 +1,9 @@
+.car {
+max-width: 1500px;
+  margin: 0 auto;
+//   border: 3px solid #73AD21;
+}
+
+.carb{
+  border-bottom:1px solid rgb(156, 156, 156);
+}

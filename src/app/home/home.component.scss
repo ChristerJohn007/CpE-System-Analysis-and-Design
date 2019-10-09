@@ -7,3 +7,137 @@ max-width: 1500px;
 .carb{
   border-bottom:1px solid rgb(156, 156, 156);
 }
+
+@import url('https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+header,
+section{
+  overflow-x: hidden
+}
+
+:root{
+  --Snigle-font:"Sniglet", cursive;
+  --Rubik: "Rubik", cursive;
+  --Patua: "Patua One", cursive;
+  --Lobster: "Lobster", cursive;
+  --light-black: #2e2c2caf;
+  --bggradient: linear-gradient(
+    to bottom
+    #dd2476, #ff512f);
+  --light-gray: rgba(255,255,255,0);
+}
+
+
+.section-1 {
+  height: 70vmin;
+  margin-top: 15vmin;
+}
+.cover{
+  width: 100%;
+  height: 50vmin;
+  background: url('../../assets/images/cover.jpg');
+  background-size: 100%;
+  position: relative;
+}
+
+.cover .content{
+  background: rgba(0,0,0,0.7);
+  height: 100%;
+  width: 100%;
+  padding-top: 19vmin;
+}
+
+.cover .content >h1{
+  font-family: var(--Patua);
+  font-size: 6vmin;
+  color: whitesmoke;
+}
+
+.cover .content >p{
+  font-family: var(--Rubik);
+  font-size: 2vmin;
+  color: #e5e5e5
+}
+
+.numbers .rect{
+  position: relative;
+  z-index: 1;
+  background: white;
+  width: 17rem;
+  height: 12rem;
+  padding-top: 3.5vmin;
+  margin: 1rem;
+  border-radius: 1em;
+  box-shadow: #dd2476;
+}
+
+.numbers{
+  margin-top: -15vmin;
+}
+
+.numbers .rect h1 {
+  color: black;
+}
+
+
+.section-3 .container h1{
+font-size: 6vmin;
+padding-top: 14vmin;
+
+}
+
+.section-3 .team{
+  padding: 10vmin 4vmin;
+
+}
+
+.section-3 .card{
+  width: 22rem;
+  margin-top: 10vmin;
+}
+
+.section-3 .card .card-text{
+    padding: 0.5em;
+}
+
+.section-3 .card .card-body >a{
+  font-size: 1.5em;
+}
+
+footer{
+  background: rgba(0,0,0,0.815);
+  overflow-x: hidden;
+  padding: 14vmin 18vmin;
+}
+
+footer p{
+  color:white;
+}
+footer p> span{
+  color: tomato;
+}
+
+footer input{
+  border: none !important;
+}
+
+footer input::placeholder{
+color: white !important;
+}
+
+footer .input-group .input-group-text{
+  background: white;
+  border: none;
+}
+
+footer .column i{
+  color: #dd2476;
+}
+
+footer .column i + i {
+  padding: 0 0.5em;
+}

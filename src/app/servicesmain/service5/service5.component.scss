@@ -1,0 +1,39 @@
+.xray{
+  width: 100%;
+  height: 500px;
+  margin-bottom: 15px;
+} 
+
+footer{
+    background: rgba(0,0,0,0.815);
+    overflow-x: hidden;
+    padding: 14vmin 18vmin;
+  }
+  
+  footer p{
+    color:white;
+  }
+  footer p> span{
+    color: tomato;
+  }
+  
+  footer input{
+    border: none !important;
+  }
+  
+  footer input::placeholder{
+  color: white !important;
+  }
+  
+  footer .input-group .input-group-text{
+    background: white;
+    border: none;
+  }
+  
+  footer .column i{
+    color: #dd2476;
+  }
+  
+  footer .column i + i {
+    padding: 0 0.5em;
+  }
