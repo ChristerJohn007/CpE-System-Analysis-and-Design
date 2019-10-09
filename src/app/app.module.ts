@@ -10,7 +10,6 @@ import { HomeModule } from './home/home.module';
 import { ServicesmainModule } from './servicesmain/servicesmain.module';
 import { AppointmentModule } from './appointment/appointment.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -35,9 +34,10 @@ import { GuardService } from './shared/guard.service';
 
 //Environment
 import { environment } from '../environments/environment';
-import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
-
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 

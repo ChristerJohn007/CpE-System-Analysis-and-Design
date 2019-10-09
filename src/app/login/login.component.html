@@ -1,21 +1,29 @@
-<div class="container-fluid">
+<div class="d-flex justify-content-center">
 
-<h1> Base </h1>
+<h1> Google Authentication Test </h1>
+<br>
+<br>
+</div>
+<div class="align-items-center" align="center">
+<a routerLink="/admin/mateoadminui">Dashboard</a>
+</div>
 
 <div *ngIf="auth.user$ | async as user; else login">
     <pre>
+    <b>Login Authorized!</b>
     {{ user | json}}
     </pre>
     <hr>
-    <button class="button" (click)="auth.signOut()">Sign Out</button>
+    <button class="button" align="center" (click)="auth.signOut()">Sign Out</button>
 
 
 </div>
-
+<br>
+<div class="d-flex justify-content-center" align="center">
 <ng-template #login>
     <button class="button" (click)="auth.googleSignin()">Login with Google</button>
 </ng-template>
-
-
 </div>
+
+
 <router-outlet></router-outlet>
