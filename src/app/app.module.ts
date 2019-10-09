@@ -12,6 +12,9 @@ import { AppointmentModule } from './appointment/appointment.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { LoginModule } from './login/login.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { HttpClientModule } from '@angular/common/http'; 
 
 
 
@@ -27,9 +30,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Services
 import { AppointmentService } from './shared/appointment.service';
+import { AuthService } from './shared/auth.service';
+import { GuardService } from './shared/guard.service';
 
 //Environment
 import { environment } from '../environments/environment';
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AngularFirestore } from '@angular/fire/firestore';
+
 // import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 
 
@@ -41,7 +50,7 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     ClinicsComponent,
-    AboutComponent
+    AboutComponent,
     // AppointmentListComponent,
   ],
   imports: [
@@ -57,9 +66,13 @@ import { environment } from '../environments/environment';
     AppointmentModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    LoginModule,
+    DashboardModule,
+    HttpClientModule
   ],
-  providers: [AppointmentService],
+  providers: [AppointmentService, AuthService, AngularFirestore, GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

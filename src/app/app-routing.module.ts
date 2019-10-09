@@ -14,7 +14,11 @@ import { Service3Component } from './servicesmain/service3/service3.component';
 import { Service4Component } from './servicesmain/service4/service4.component';
 import { Service5Component } from './servicesmain/service5/service5.component';
 import { AboutComponent } from './about/about.component';
-import { AppointmentComponent } from './appointment/appointment.component'
+import { AppointmentComponent } from './appointment/appointment.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { GuardService } from './shared/guard.service'
+
 
 
 const routes: Routes = [
@@ -30,6 +34,8 @@ const routes: Routes = [
   { path: 'clinics', component: ClinicsComponent},
   { path: 'about', component: AboutComponent},
   { path: 'appointment', component: AppointmentComponent},
+  { path: 'admin/mateoadminlogin', component: LoginComponent},
+  { path: 'admin/mateoadminui', component: DashboardComponent, canActivate: [GuardService] }
 ];
 
 @NgModule({
