@@ -52,6 +52,8 @@ export class AppointmentComponent implements OnInit {
     if (this.appointmentService.form.valid) {
         if (this.appointmentService.form.get('$key').value == null)
             this.appointmentService.insertAppointment(this.appointmentService.form.value);
+          else
+            this.appointmentService.updateAppointment(this.appointmentService.form.value);
             this.showSuccessMessage = true;
             setTimeout(() => this.showSuccessMessage = false, 3000);
     //insert
@@ -60,5 +62,4 @@ export class AppointmentComponent implements OnInit {
     }
   }
 
- 
 }

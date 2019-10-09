@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 //Components
 import { DashboardComponent } from './dashboard.component';
@@ -15,7 +16,8 @@ import { DashboardComponent } from './dashboard.component';
     DashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class DashboardModule { }

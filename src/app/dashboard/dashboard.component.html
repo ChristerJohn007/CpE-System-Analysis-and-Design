@@ -1,1 +1,36 @@
-<p>dashboard works!</p>
+<br>
+<div class="d-flex justify-content-center">
+<form class="form-inline">
+    <input class="form-control" name="searchInput" placeholder="Search Records" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%">
+    <button class="btn btn-outline-primary" (click)="searchText=''">X</button>
+</form>
+</div>
+<br>
+<table class="table table-sm table-dark table-hover">
+    <thead class="thead-light text-center">
+        <th>Patient Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+        <th>Procedure</th>
+        <th></th>
+    </thead>
+    <ng-container *ngFor="let appointment of appointmentArray">
+        <tr class="primary text-center" *ngIf="filterCondition(appointment)">
+            <td>{{appointment.fullName}}</td>
+            <td>{{appointment.email}}</td>
+            <td>{{appointment.mobile}}</td>
+            <td>{{appointment.month}} {{appointment.day}} {{appointment.year}}</td>
+            <td>{{appointment.time}}</td>
+            <td>{{appointment.procedure}}</td>
+            <td>
+                <button class="btn btn-outline-info" (click)="appointmentService.populateForm(appointment)">Edit</button>
+                <button class="btn btn-outline-danger" (click)="onDelete(appointment.$key)">Delete</button>
+            </td>
+        </tr>
+    </ng-container>
+</table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">
+    Deleted the appointment successfully!
+</div>

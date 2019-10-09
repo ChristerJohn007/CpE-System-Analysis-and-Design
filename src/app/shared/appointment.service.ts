@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Router, Routes, RouterModule } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppointmentService {
 
-  constructor(private firebase: AngularFireDatabase) { }
+  constructor(private firebase: AngularFireDatabase, private router: Router) { }
   appointmentList: AngularFireList<any>;
   emailRegEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
 
@@ -41,5 +42,26 @@ export class AppointmentService {
     });
   }
 
+  populateForm(appointment) {
+    this.form.setValue(appointment);
+    this.router.navigate(['/appointment']);
+  }
+
+  updateAppointment(appointment) {
+    this.appointmentList.update(appointment.$key,{
+      fullName: appointment.fullName,
+      email: appointment.email,
+      mobile: appointment.mobile,
+      month: appointment.month,
+      day: appointment.day,
+      year: appointment.year,
+      time: appointment.time,
+      procedure: appointment.procedure
+    })
+  }
+
+  deleteAppointment($key: string) {
+    this.appointmentList.remove($key);
+  }
   
 }

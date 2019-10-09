@@ -25,7 +25,7 @@ export class GuardService implements CanActivate{
         map(user => !!user),
         tap(loggedIn => {
           if (!loggedIn) {
-            console.log('Access Denied');
+            alert('Access Denied! Please login using authenticated Google Account to proceed.');
             this.router.navigate(['/admin/mateoadminlogin']);
           }
         })

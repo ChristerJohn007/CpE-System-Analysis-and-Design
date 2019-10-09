@@ -9,7 +9,7 @@ import { TopnavModule } from './topnav/topnav.module';
 import { HomeModule } from './home/home.module';
 import { ServicesmainModule } from './servicesmain/servicesmain.module';
 import { AppointmentModule } from './appointment/appointment.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -65,6 +65,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     BrowserAnimationsModule,
     AppointmentModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
