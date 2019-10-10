@@ -38,6 +38,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FooterComponent } from './footer/footer.component';
 
 // import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 
@@ -51,6 +52,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AppComponent,
     ClinicsComponent,
     AboutComponent,
+    FooterComponent,
     // AppointmentListComponent,
   ],
   imports: [

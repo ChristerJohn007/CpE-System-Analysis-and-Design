@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Modules
 import { TopnavModule } from '../topnav/topnav.module'
+import { FooterModule } from '../footer/footer.module';
 
 //Components
 import { HomeComponent } from './home.component';
@@ -15,6 +16,7 @@ import { CarouselComponent } from '../carousel/carousel.component'
 //Angular Material Modules
 import { MatDividerModule } from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+
 
 
 
@@ -29,6 +31,7 @@ import {MatListModule} from '@angular/material/list';
     AppRoutingModule,
     NgbModule,
     TopnavModule,
+    FooterModule,
     MatDividerModule,
     MatListModule
   ]
